@@ -40,6 +40,12 @@ class EntriesController < ApplicationController
         end
     end
 
+    # function to delete an entry 
+    def delete 
+        entry.find(params[:id]).destroy 
+        redirect_to :action => 'index'
+    end
+
    # custom function that holds parameters to
    # be passed when making an entry.
 
