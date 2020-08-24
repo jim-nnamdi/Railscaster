@@ -7,6 +7,13 @@ require('@rails/ujs').start();
 require('turbolinks').start();
 require('@rails/activestorage').start();
 require('channels');
+require('jquery/jquery.min');
+require('jquery/jquery');
+require('jquery/slim');
+require('jquery/slim.min');
+require('js/bootstrap');
+require('js/bootstrap.min');
+require('js/bootstrap.bundle.min');
 
 console.log('railscaster');
 
