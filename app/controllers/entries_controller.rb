@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+    skip_before_action :verify_authenticity_token
 
     # return all entries
     def index 
@@ -17,6 +18,7 @@ class EntriesController < ApplicationController
 
     # save an entry to database 
     def create 
+        
         @entry = Entry.new(entries_parameters)
         if @entry.save 
             redirect_to :action => 'index'
@@ -50,7 +52,7 @@ class EntriesController < ApplicationController
    # be passed when making an entry.
 
    def entries_parameters 
-    params.require(:entry).permit(:title, :description, :author)
+    params.require(:entry).permit(:title,:description, :author)
    end
 
 end

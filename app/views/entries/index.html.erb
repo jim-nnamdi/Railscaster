@@ -58,18 +58,18 @@
 
     <div class="row">
 
-    <% if @entries.blank? %> 
+    <% if @entry.blank? %> 
     <div class="alert alert-success col-md-12"> No Entries currently <a href="/entries/new"> Add new entry </a> </div>
     <% else %>
-    <% @entries.each do |e| %> 
+    <% @entry.each do |e| %> 
       <div class="col-md-4 mb-5">
         <div class="card h-100">
           <div class="card-body">
-            <h2 class="card-title"> e.title </h2>
-            <p class="card-text"> e.description </p>
+            <h2 class="card-title"> <%= e.title %> </h2>
+            <p class="card-text"> <%= e.description %> </p>
           </div>
           <div class="card-footer">
-            <a href="/entries/show/e.id" class="btn btn-primary btn-sm">More Info</a>
+            <a href="/entries/show/<%= e.id %>" class="btn btn-primary btn-sm">More Info</a>
           </div>
         </div>
       </div>
