@@ -37,13 +37,20 @@
   </nav>
 
   <div class="container mt-5">
-  <h1> <%= @entry.title %> </h1>
-  <%= @entry.created_at %><br>
-  Article by <%= @entry.author %>
+  <h1>Edit Entry</h1>
   <hr>
-  <p class="lead text-justify">
-  <%= @entry.description %>
-  <a href="/entries/<%= @entry.id %>/edit" > Edit Post</a>
+  <form action="/entries/create" method="POST">
+  <div class="form-group">
+  <input class ="form-control" name="entry[title]" value="<%= @entry.title %>" placeholder="Title">
+  </div>
+  <div class="form-group">
+  <textarea rows="5" name="entry[description]" class ="form-control"><%= @entry.description %></textarea>
+  </div>
+  <div class="form-group">
+  <input class ="form-control" placeholder="Author" value="<%= @entry.author %>" name="entry[author]">
+  </div>
+  <input type="submit" class="btn btn-success btn-sm">
+  </form>
   </div>
   </body>
   </html>
