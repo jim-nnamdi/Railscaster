@@ -42,8 +42,11 @@
   Article by <%= @entry.author %>
   <hr>
   <p class="lead text-justify">
-  <%= @entry.description %>
+  <%= @entry.description %><br>
   <a href="/entries/<%= @entry.id %>/edit" > Edit Post</a>
+  <form method="destroy" action="/entries/<%= @entry.id %>">
+  <a href="/entries/<%= @entry.id %>" > Delete Post</a>
+  </form>
   </div>
   </body>
   </html>
