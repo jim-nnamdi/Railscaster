@@ -21,8 +21,12 @@ class EntriesController < ApplicationController
         
         @entry = Entry.new(entries_parameters)
         if @entry.save 
+            flash[:notice] = "Entry saved successfully"
+
+            # can use redirect_to root_url
             redirect_to :action => 'index'
         else
+            flash.new(:error) = "Entry not saved"
             render :action => 'new'
         end
     end
