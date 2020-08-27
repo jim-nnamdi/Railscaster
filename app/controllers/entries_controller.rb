@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+
+    # Handling the Cross sitr request Forgery.
     skip_before_action :verify_authenticity_token
 
     # return all entries
@@ -40,7 +42,11 @@ class EntriesController < ApplicationController
     def update 
         @entry = Entry.find(params[:id])
         if @entry.update_attributes(entries_parameters)
+            if(@entry.save!)
+                flash.now(:error) = "Error in updating entry"
+            else
             redirect_to :action => 'show', :id => @entry
+            end
         else 
             render :action => 'edit'
         end
