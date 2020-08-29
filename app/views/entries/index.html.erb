@@ -61,7 +61,7 @@
         <div class="card h-100">
           <div class="card-body">
             <h2 class="card-title"> <%= e.title %> </h2>
-            <p class="card-text"> <%= e.description %> </p>
+            <p class="card-text"> <%= truncate(e.description, :length => 20) %> </p>
           </div>
           <div class="card-footer">
             <a href="/entries/<%= e.id %>" class="btn btn-primary btn-sm">More Info</a>
