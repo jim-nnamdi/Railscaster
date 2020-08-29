@@ -44,9 +44,11 @@
   <p class="lead text-justify">
   <%= @entry.description %><br>
   <a href="/entries/<%= @entry.id %>/edit" > Edit Post</a>
-  <form method="destroy" action="/entries/<%= @entry.id %>">
-  <a href="/entries/<%= @entry.id %>" > Delete Post</a>
-  </form>
+
+
+  <%= link_to 'Delete Entry', entry_path(@entry),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
   </div>
   </body>
   </html>

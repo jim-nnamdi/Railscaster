@@ -39,7 +39,7 @@
   <div class="container mt-5">
   <h1>Edit Entry</h1>
   <hr>
-  <form action="/entries/<%= @entry.id %>" method="patch">
+  <form action="/entries/<%= @entry.id %>" method="PATCH">
   <div class="form-group">
   <input class ="form-control" name="entry[title]" value="<%= @entry.title %>" placeholder="Title">
   </div>

@@ -28,7 +28,7 @@ class EntriesController < ApplicationController
             # can use redirect_to root_url
             redirect_to :action => 'index'
         else
-            flash.new(:error) = "Entry not saved"
+            flash.now[:error] = "Entry not saved"
             render :action => 'new'
         end
     end
@@ -43,7 +43,7 @@ class EntriesController < ApplicationController
         @entry = Entry.find(params[:id])
         if @entry.update_attributes(entries_parameters)
             if(@entry.save!)
-                flash.now(:error) = "Error in updating entry"
+                flash.now[:error] = "Error in updating entry"
             else
             redirect_to :action => 'show', :id => @entry
             end
@@ -53,7 +53,7 @@ class EntriesController < ApplicationController
     end
 
     # function to delete an entry 
-    def delete 
+    def destroy 
         Entry.find(params[:id]).destroy 
         redirect_to :action => 'index'
     end
