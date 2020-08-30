@@ -62,7 +62,7 @@ class EntriesController < ApplicationController
    # be passed when making an entry.
 
    def entries_parameters 
-    params.require(:entry).permit(:title,:description, :author)
+    params.require(:entry).permit(:title,:description, :author, :entryimage)
    end
 
 end

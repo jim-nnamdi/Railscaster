@@ -41,6 +41,9 @@
   <%= @entry.created_at %><br>
   Article by <%= @entry.author %>
   <hr>
+  <% if @entry.entryimage.attached? %>
+  <img src="<%= (url_for(@entry.entryimage)) %>" />
+  <% end %>
   <p class="lead text-justify">
   <%= @entry.description %><br>
   <a href="/entries/<%= @entry.id %>/edit" > Edit Post</a>
