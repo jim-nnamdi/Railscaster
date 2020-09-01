@@ -10,7 +10,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Rails Caster</a>
+      <a class="navbar-brand" href="#">Rails-Hackathon-starter</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,22 +35,23 @@
     </div>
   </nav>
 
+  <div class="container-fluid mt-5">
+<div class="jumbotron jumbotron-fluid mt-5" style="backg">
+
+<br><br>
   <div class="container">
-
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7 mt-5">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="https://i.gadgets360cdn.com/large/cod_mobile_main_1570103396815.jpg?output-quality=80" alt="">
-      </div>
-     
-
-      <div class="col-lg-5 mt-5">
-        <h1 class="font-weight-light"><b>RailsCaster</b></h1>
-        <p class="text-justify lead">Railscaster is an opensource template built using the Ruby on Rails framework built on Ruby and it spans different functionalities currently which includes the options of Adding news entries ad also ability to Edit and delete those news entries too generally. Furthermore extra options and features are still yet to be added which includes addition of Images, and proper user and Adin Dashboards, stay tuned.</p>
-        <a class="btn btn-success btn-lg" href="#">Call to Action!</a>
-      </div>
-    </div>
-
-
+  <% if @jumbo_entry.blank? %>
+  <h1 class ="display-4"> No Posts Yet </h1>
+ <% else %>
+  <% @jumbo_entry.each do |j| %>
+    <h1 class="display-4"><%= j.title %></h1>
+    <p class="lead"><%= truncate(j.description, :length=> 150) %></p>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+</div>
+<div class="container">
     <div class="row">
 
     <% if @entry.blank? %> 
@@ -59,6 +60,11 @@
     <% @entry.each do |e| %> 
       <div class="col-md-4 mb-5">
         <div class="card h-100">
+        <% if e.entryimage.attached? %>
+             <div class="card-img">
+              <img src="<%= (url_for(e.entryimage)) %>" width="100%" height="200px" style="object-fit:cover"/>
+              </div>
+        <% end %>
           <div class="card-body">
             <h2 class="card-title"> <%= e.title %> </h2>
             <p class="card-text"> <%= truncate(e.description, :length => 150) %> </p>
@@ -77,7 +83,7 @@
 
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+      <p class="m-0 text-center text-white">Copyright &copy; Rails-Hackathon-starter 2020</p>
     </div>
    
   </footer>

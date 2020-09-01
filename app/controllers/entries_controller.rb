@@ -6,6 +6,9 @@ class EntriesController < ApplicationController
     # return all entries
     def index 
         @entry = Entry.all 
+
+        # show the entry at Jumbotron section 
+        @jumbo_entry = Entry.where(:id => 12)
     end
 
     # create a new entry 
