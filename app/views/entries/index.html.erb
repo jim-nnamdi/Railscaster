@@ -36,17 +36,15 @@
   </nav>
 
   <div class="container-fluid mt-5">
-<div class="jumbotron jumbotron-fluid mt-5" style="backg">
+<div class="jumbotron jumbotron-fluid mt-5">
 
 <br><br>
-  <div class="container">
+  <div class="container col-md-6">
   <% if @jumbo_entry.blank? %>
   <h1 class ="display-4"> No Posts Yet </h1>
  <% else %>
-  <% @jumbo_entry.each do |j| %>
-    <h1 class="display-4"><%= j.title %></h1>
-    <p class="lead"><%= truncate(j.description, :length=> 150) %></p>
-    <% end %>
+    <h1 class="display-4"><%= @jumbo_entry.title %></h1>
+    <p class="lead"><%= truncate(@jumbo_entry.description, :length=> 200) %></p>
     <% end %>
   </div>
 </div>

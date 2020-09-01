@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
         @entry = Entry.all 
 
         # show the entry at Jumbotron section 
-        @jumbo_entry = Entry.where(:id => 12)
+        @jumbo_entry = Entry.first
     end
 
     # create a new entry 

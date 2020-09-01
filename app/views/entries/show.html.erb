@@ -48,12 +48,14 @@
   <% end %>
   <p class="lead text-justify">
   <%= @entry.description %><br>
-  <a href="/entries/<%= @entry.id %>/edit" > Edit Post</a>
-
-
+  <hr>
+  <div class ="d-flex">
+  <a href="/entries/<%= @entry.id %>/edit" class="btn btn-warning"> Edit Post</a>
   <%= link_to 'Delete Entry', entry_path(@entry),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+              data: { confirm: 'Are you sure?' },
+              class: 'btn btn-danger ml-2' %>
+  </div>
   </div>
   </body>
   </html>
