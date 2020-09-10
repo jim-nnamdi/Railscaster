@@ -44,9 +44,9 @@
   Article by <%= @entry.author %>
   <hr>
   <% if @entry.entryimage.attached? %>
-  <img src="<%= (url_for(@entry.entryimage)) %>" width="100%" height="300px" style="object-fit:cover"/>
+  <img src="<%= (url_for(@entry.entryimage)) %>" width="100%" height="300px" style="object-fit:cover; border-radius:20px"/>
   <% end %>
-  <p class="lead text-justify">
+  <p class="lead text-justify mt-4">
   <%= @entry.description %><br>
   <hr>
   <div class ="d-flex">
@@ -57,5 +57,12 @@
               class: 'btn btn-danger ml-2' %>
   </div>
   </div>
-  </body>
-  </html>
+ 
+  <footer class="mt-5 py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Rails-Hackathon-starter 2020</p>
+    </div>
+   
+  </footer>
+    </body>
+    </html>
