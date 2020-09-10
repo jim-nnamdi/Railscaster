@@ -40,11 +40,14 @@
 <section class="mt-5">
   <div class="container">
   <h1> <%= @entry.title %> </h1>
-  <%= @entry.created_at %><br>
-  Article by <%= @entry.author %>
-  <hr>
   <% if @entry.entryimage.attached? %>
-  <img src="<%= (url_for(@entry.entryimage)) %>" width="100%" height="300px" style="object-fit:cover; border-radius:20px"/>
+  <img src="<%= (url_for(@entry.entryimage)) %>" width="100%" height="300px" style="object-fit:cover;"/>
+  <hr>
+  <div class="d-flex">
+  <span class="mr-3"><%= @entry.created_at %></span> | 
+  <span class="ml-3">Article by <%= @entry.author %></span>
+  </div>
+  <hr>
   <% end %>
   <p class="lead text-justify mt-4">
   <%= @entry.description %><br>
