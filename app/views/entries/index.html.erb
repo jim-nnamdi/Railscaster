@@ -42,11 +42,11 @@
 
 <br><br>
   <div class="container col-md-6">
-  <% if @jumbo_entry.blank? %>
+  <% if @m_jumbo_entry.blank? %>
   <h1 class ="display-4"> No Posts Yet </h1>
  <% else %>
-    <h1 class="display-4"><%= @jumbo_entry.title %></h1>
-    <p class="lead"><%= truncate(@jumbo_entry.description, :length=> 200) %></p>
+    <h1 class="display-4"><%= @m_jumbo_entry.title %></h1>
+    <p class="lead"><%= truncate(@m_jumbo_entry.description, :length=> 200) %></p>
     <% end %>
   </div>
 </div>

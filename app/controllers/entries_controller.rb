@@ -8,7 +8,8 @@ class EntriesController < ApplicationController
         @entry = Entry.all.order("created_at desc")
 
         # show the entry at Jumbotron section 
-        @jumbo_entry = Entry.first.order("created_at desc")
+        @jumbo_entry = Entry.first
+        @m_jumbo_entry = Entry.order("created_at").last
     end
 
     # create a new entry 
