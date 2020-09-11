@@ -59,10 +59,10 @@
     <% else %>
     <% @entry.each do |e| %> 
       <div class="col-md-4 mb-5">
-        <div class="card h-100" style="border-radius:0px">
+        <div class="card h-100" style="border-radius:20px">
         <% if e.entryimage.attached? %>
              <div class="card-img">
-              <img src="<%= (url_for(e.entryimage)) %>" width="100%" height="200px" style="object-fit:cover;"/>
+              <img src="<%= (url_for(e.entryimage)) %>" width="100%" height="200px" style="object-fit:cover;border-radius:20px;border-bottom-left-radius:0px !important;border-bottom-right-radius:0px !important"/>
               </div>
         <% end %>
           <div class="card-body">
