@@ -5,10 +5,10 @@ class EntriesController < ApplicationController
 
     # return all entries
     def index 
-        @entry = Entry.all 
+        @entry = Entry.all.order("created_at desc")
 
         # show the entry at Jumbotron section 
-        @jumbo_entry = Entry.first
+        @jumbo_entry = Entry.first.order("created_at desc")
     end
 
     # create a new entry 
