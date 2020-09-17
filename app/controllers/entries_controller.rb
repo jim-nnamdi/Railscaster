@@ -20,6 +20,9 @@ class EntriesController < ApplicationController
     # show a single entry 
     def show 
         @entry = Entry.find(params[:id])
+
+        @related = Entry.order("created_at DESC").first
+        @other_related = Entry.order("created_at ASC").first
     end
 
     # save an entry to database 

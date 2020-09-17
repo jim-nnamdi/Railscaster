@@ -36,9 +36,11 @@
     </div>
   </nav>
 
+  <br><br>
   <div class="container mt-5">
+  <div class="row">
+  <div class="col-md-8">
   <h1>Edit Entry</h1>
-  <hr>
   <form action="/entries/<%= @entry.id %>" method="PATCH">
 
   <div class="form-group">
@@ -46,7 +48,7 @@
   </div>
 
   <div class="form-group">
-  <textarea rows="5" name="entry[description]" class ="form-control"><%= @entry.description %></textarea>
+  <textarea rows="10" name="entry[description]" class ="form-control"><%= @entry.description %></textarea>
   </div>
 
   <div class="form-group">
@@ -55,6 +57,17 @@
 
   <input type="submit" class="btn btn-success btn-sm">
   </form>
+  </div>
+  <div class="col-md-4">
+  <img src="<%= (url_for(@entry.entryimage)) %>" class="mr-3" width="100%" height="200px" style="object-fit:cover; border-radius:20px"/><br><br>
+  <img src="<%= (url_for(@entry.entryimage)) %>" class="mr-3" width="100%" height="200px" style="object-fit:cover; border-radius:20px"/><br><br>
+  <img src="<%= (url_for(@entry.entryimage)) %>" class="mr-3" width="100%" height="200px" style="object-fit:cover; border-radius:20px"/><br><br>
+  <img src="<%= (url_for(@entry.entryimage)) %>" class="mr-3" width="100%" height="200px" style="object-fit:cover; border-radius:20px"/><br><br>
+  <img src="<%= (url_for(@entry.entryimage)) %>" class="mr-3" width="100%" height="200px" style="object-fit:cover; border-radius:20px"/>
+
+
+  </div>
+  </div>
   </div>
   
   </body>
